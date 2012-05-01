@@ -1,0 +1,21 @@
+#!/bin/sh
+# Tinaja Labs, Summer 2012
+
+[ -f /etc/banner ] && cat /etc/banner
+
+# changed path, added LD_LIBRARY_PATH, mainly for python access
+# export PATH=/bin:/sbin:/usr/bin:/usr/sbin
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/opt/bin:/opt/sbin:/opt/usr/bin:/opt/usr/sbin
+export LD_LIBRARY_PATH=/lib:/usr/lib:/opt/usr/lib:/opt/lib
+
+export HOME=$(grep -e "^${USER:-root}:" /etc/passwd | cut -d ":" -f 6)
+export HOME=${HOME:-/root}
+export PS1='\u@\h:\w\$ '
+
+[ -x /bin/more ] || alias more=less
+[ -x /usr/bin/vim ] && alias vi=vim || alias vim=vi
+
+[ -z "$KSH_VERSION" -o \! -s /etc/mkshrc ] || . /etc/mkshrc
+
+[ -x /usr/bin/arp ] || arp() { cat /proc/net/arp; }
+[ -z /bin/ldd ] || ldd() { LD_TRACE_LOADED_OBJECTS=1 $*; }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<tinajalabs>
+	<settings>
+		<serial port="/dev/ttyS1" baudrate="9600" />
+		<power currentsense="4" voltsense="0" mainvpp="340" />
+	</settings>
+	<services>
+		<service name="pachube" url="/v2/feeds/" apikey="e7d7befa77e795a688c5d0b6c7a3ddef95012e2e2e57062be4c7d175d2901651" />
+		<service name="opensense" url="http://api.sen.se/events/?sense_key=" apikey="3aDtyWpZYcgXCYpDM5az_A" />
+			<!-- opensense alt apikey="pdd-cRQmZiaJxFz-KmbApQ" -->
+		<service name="thingspeak" url="api.thingspeak.com" apikey="U493V3CHYJS9N9FP" />
+		<service name="tinajalabs" url="http://jumano.com/tinajadl/datalogger.asmx" apikey="U493V3CHYJS9N9FP" />
+		<service name="twitter" username="christweetawatt" passw="hello1" />
+	</services>
+	<devices>
+		<device id="1" active="0" feedkey="" desc="Back Porch Radio" vrefcal="0">
+			<datafeeds>
+				<datafeed service="pachube" id="0" feedkey="" feedapi="" desc="" />
+				<datafeed service="pachube" id="1" feedkey="" feedapi="" desc="Temperature"/>
+				<datafeed service="pachube" id="2" feedkey="" feedapi="" desc="Light"/>
+				<datafeed service="pachube" id="3" feedkey="" feedapi="" desc=""/>
+				<datafeed service="opensense" id="1" feedkey="" feedapi="" desc=""/>
+				<datafeed service="thingspeak" id="2" feedkey="" feedapi="" desc=""/>
+			</datafeeds>
+		</device>
+	</devices>
+</tinajalabs>
+

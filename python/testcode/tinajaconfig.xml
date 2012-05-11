@@ -1,0 +1,182 @@
+<?xml version="1.0" ?>
+<tinaja>
+  <!--Generated config file for TinajaLabs-->
+  <settings>
+    <setting id="serial" baudrate="9600" port="/dev/ttyS1"/>
+    <setting id="power" currentnorm="15.5" currentsense="4" mainvpp="340" voltsense="0"/>
+  </settings>
+  <services>
+    <service apikey="e7d7befa77e795a688c5d0b6c7a3ddef95012e2e2e57062be4c7d175d2901651" name="pachube" passw="xyz" uname="janedoe" url="/v2/feeds/"/>
+    <service apikey="U493V3CHYJS9N9FP" name="thingspeak" passw="xyz" uname="janedoe" url="api.thingspeak.com"/>
+    <service apikey="pdd-cRQmZiaJxFz-KmbApQ" name="opensense" passw="xyz" uname="janedoe" url="http://api.sen.se/events/?sense_key="/>
+    <service apikey="xyz" name="tinajalabs" passw="xyz" uname="janedoe" url="http://jumano.com/tinajadl/datalogger.asmx"/>
+    <service apikey="xyz" name="twitter" passw="xyz" uname="chrisjx" url="http://www.google.com"/>
+  </services>
+  <devices>
+    <device active="1" desc="Power Meter - Tweet-a-Watt" devicekey="9666" id="1" vrefcal="488" handler="calcwatts">
+      <datafeeds>
+        <datafeed desc="" feedapi="" feedkey="" id="0" service="pachube" handler=""/>
+        <datafeed desc="" feedapi="" feedkey="" id="1" service="pachube" handler=""/>
+        <datafeed desc="" feedapi="" feedkey="" id="2" service="pachube" handler=""/>
+        <datafeed desc="" feedapi="" feedkey="" id="3" service="pachube" handler=""/>
+      </datafeeds>
+    </device>
+    <device active="1" desc="Back Porch Radio" devicekey="9709" id="2" vrefcal="0" handler="">
+      <datafeeds>
+        <datafeed desc="" feedapi="" feedkey="" id="0" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="1" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="2" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="3" service="pachube" handler="getmvolts"/>
+      </datafeeds>
+    </device>
+    <device active="1" desc="Power Meter - Tweet-a-Watt" devicekey="9668" id="3" vrefcal="487" handler="calcwatts">
+      <datafeeds>
+        <datafeed desc="" feedapi="" feedkey="" id="0" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="1" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="2" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="3" service="pachube" handler="getmvolts"/>
+      </datafeeds>
+    </device>
+    <device active="1" desc="Power Meter - Tweet-a-Watt" devicekey="9669" id="4" vrefcal="485" handler="calcwatts">
+      <datafeeds>
+        <datafeed desc="" feedapi="" feedkey="" id="0" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="1" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="2" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="3" service="pachube" handler="getmvolts"/>
+      </datafeeds>
+    </device>
+    <device active="1" desc="Natural Gas Sensor - Dining room" devicekey="10267" id="5" vrefcal="0" handler="">
+      <datafeeds>
+        <datafeed desc="" feedapi="" feedkey="" id="0" service="pachube" handler="getmvolts"/>
+      </datafeeds>
+    </device>
+    <device active="0" desc="unused" devicekey="10258" id="6" vrefcal="0">
+      <datafeeds>
+        <datafeed desc="" feedapi="" feedkey="" id="0" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="1" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="2" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="3" service="pachube" handler="getmvolts"/>
+      </datafeeds>
+    </device>
+    <device active="1" desc="Office Multi-sensor PCB1" devicekey="24660" id="7" vrefcal="0" handler="">
+      <datafeeds>
+        <datafeed desc="" feedapi="" feedkey="" id="0" service="pachube" handler="getmvolts"/>
+        <datafeed desc="Temperature" feedapi="" feedkey="" id="1" service="pachube" handler="calctemp"/>
+        <datafeed desc="Light" feedapi="" feedkey="" id="2" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="3" service="pachube" handler="getmvolts"/>
+      </datafeeds>
+    </device>
+    <device active="1" desc="Bed room Multi-sensor PCB1" devicekey="25131" id="8" vrefcal="0" handler="">
+      <datafeeds>
+        <datafeed desc="" feedapi="" feedkey="" id="0" service="pachube" handler="getmvolts"/>
+        <datafeed desc="Temperature" feedapi="" feedkey="" id="1" service="pachube" handler="calctemp"/>
+        <datafeed desc="Light" feedapi="" feedkey="" id="2" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="3" service="pachube" handler="getmvolts"/>
+      </datafeeds>
+    </device>
+    <device active="1" desc="Guest room Multi-sensor PCB1" devicekey="25133" id="9" vrefcal="0" handler="">
+      <datafeeds>
+        <datafeed desc="" feedapi="" feedkey="" id="0" service="pachube" handler="getmvolts"/>
+        <datafeed desc="Temperature" feedapi="" feedkey="" id="1" service="pachube" handler="calctemp"/>
+        <datafeed desc="Light" feedapi="" feedkey="" id="2" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="3" service="pachube" handler="getmvolts"/>
+      </datafeeds>
+    </device>
+    <device active="1" desc="Living Room Multi-sensor PCB1" devicekey="25134" id="10" vrefcal="0" handler="">
+      <datafeeds>
+        <datafeed desc="" feedapi="" feedkey="" id="0" service="pachube" handler="getmvolts"/>
+        <datafeed desc="Temperature" feedapi="" feedkey="" id="1" service="pachube" handler="calctemp"/>
+        <datafeed desc="Light" feedapi="" feedkey="" id="2" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="3" service="pachube" handler="getmvolts"/>
+      </datafeeds>
+    </device>
+    <device active="1" desc="Experimental solar power tracking" devicekey="25135" id="11" vrefcal="0" handler="">
+      <datafeeds>
+        <datafeed desc="" feedapi="" feedkey="" id="0" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="1" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="2" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="3" service="pachube" handler="getmvolts"/>
+      </datafeeds>
+    </device>
+    <device active="0" desc="Power Meter - Tweet-a-Watt" devicekey="" id="12" vrefcal="486" handler="calcwatts">
+      <datafeeds>
+        <datafeed desc="" feedapi="" feedkey="" id="0" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="1" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="2" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="3" service="pachube" handler="getmvolts"/>
+      </datafeeds>
+    </device>
+    <device active="0" desc="router receiver" devicekey="" id="13" vrefcal="0" handler="">
+      <datafeeds>
+        <datafeed desc="" feedapi="" feedkey="" id="0" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="1" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="2" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="3" service="pachube" handler="getmvolts"/>
+      </datafeeds>
+    </device>
+    <device active="0" desc="Terence" devicekey="" id="14" vrefcal="0" handler="">
+      <datafeeds>
+        <datafeed desc="" feedapi="" feedkey="" id="0" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="1" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="2" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="3" service="pachube" handler="getmvolts"/>
+      </datafeeds>
+    </device>
+    <device active="0" desc="unused" devicekey="29631" id="15" vrefcal="0" handler="">
+      <datafeeds>
+        <datafeed desc="" feedapi="" feedkey="" id="0" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="1" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="2" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="3" service="pachube" handler="getmvolts"/>
+      </datafeeds>
+    </device>
+    <device active="1" desc="Garage Multi-sensor PCB1" devicekey="" id="16" vrefcal="0" handler="">
+      <datafeeds>
+        <datafeed desc="" feedapi="" feedkey="" id="0" service="pachube" handler="getmvolts"/>
+        <datafeed desc="Temperature" feedapi="" feedkey="" id="1" service="pachube" handler="calctemp"/>
+        <datafeed desc="Light" feedapi="" feedkey="" id="2" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="3" service="pachube" handler="getmvolts"/>
+      </datafeeds>
+    </device>
+    <device active="0" desc="unused" devicekey="" id="17" vrefcal="0" handler="">
+      <datafeeds>
+        <datafeed desc="" feedapi="" feedkey="" id="0" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="1" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="2" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="3" service="pachube" handler="getmvolts"/>
+      </datafeeds>
+    </device>
+    <device active="0" desc="unused" devicekey="" id="18" vrefcal="0" handler="">
+      <datafeeds>
+        <datafeed desc="" feedapi="" feedkey="" id="0" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="1" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="2" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="3" service="pachube" handler="getmvolts"/>
+      </datafeeds>
+    </device>
+    <device active="0" desc="unknown" devicekey="" id="19" vrefcal="0" handler="">
+      <datafeeds>
+        <datafeed desc="" feedapi="" feedkey="" id="0" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="1" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="2" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="3" service="pachube" handler="getmvolts"/>
+      </datafeeds>
+    </device>
+    <device active="0" desc="Terence" devicekey="" id="20" vrefcal="0" handler="">
+      <datafeeds>
+        <datafeed desc="" feedapi="" feedkey="" id="0" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="1" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="2" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="3" service="pachube" handler="getmvolts"/>
+      </datafeeds>
+    </device>
+    <device active="0" desc="unknown" devicekey="" id="21" vrefcal="0" handler="">
+      <datafeeds>
+        <datafeed desc="" feedapi="" feedkey="" id="0" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="1" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="2" service="pachube" handler="getmvolts"/>
+        <datafeed desc="" feedapi="" feedkey="" id="3" service="pachube" handler="getmvolts"/>
+      </datafeeds>
+    </device>
+  </devices>
+</tinaja>

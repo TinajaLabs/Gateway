@@ -1,6 +1,8 @@
 # testservotemp.py
 # read a temp sensor and adjust the servo setting
-# 
+# this is a test of opening and closing a damper in an hvac duct
+# works with 2.0.0 lib from this repo: http://code.google.com/p/python-xbee/ 
+# Chris Jefferies, 2012.05.13
 
 import serial
 import sys
@@ -11,25 +13,24 @@ import math, time
 SERIALPORT = "COM4"    # the com/serial port the XBee is connected to
 BAUDRATE = 9600      # the baud rate we talk to the xbee
 
-
-# for xbee
 serial_port = serial.Serial(SERIALPORT,BAUDRATE)
 xbee = XBee(serial_port)
-xbeeDest = b'\x00\x18' # Dec 24, MY=18
+xbeeDest = b'\x00\x18' # Decimal 24, MY=18
+
+print "starting testServoTemp..."
 
 # the main function
 def mainloop(idleevent):
 
-	global lastServoSetting
+	global lastServoSetting, defaultDevice
 
 	response = xbee.wait_read_frame()
 	xbeeAddr = int(binascii.hexlify(response['source_addr']),16)
 
-	if (xbeeAddr != 10):
+	if (xbeeAddr != 10):  # testing the temp data from radio 10
 		return
 
 	xbeeRSSI = "rssi: ", int(binascii.hexlify(response['rssi']),16)
-
 
 	totalmVolts = 0
 	sampleCount = len(response['samples'])
@@ -37,15 +38,19 @@ def mainloop(idleevent):
 		totalmVolts += response['samples'][i]['adc-1']
 
 	avgTemp = calctemp(totalmVolts/sampleCount)
-	print xbeeAddr, avgTemp
+	print xbeeAddr, avgTemp, lastServoSetting
 
-	if (avgTemp >= 72 and lastServoSetting != 180):
-		setpos(12,180)
-		lastServoSetting = 180
 
-	if (avgTemp <= 69 and lastServoSetting != 0):
+	# assuming a heating mode, we want to
+	# open a vent when the temp goes low
+	if (avgTemp >= 72 and lastServoSetting != 0):
 		setpos(12,0)
 		lastServoSetting = 0
+
+	# close the vent when the temp goes high
+	if (avgTemp <= 69 and lastServoSetting != 180):
+		setpos(12,180)
+		lastServoSetting = 180
 
 	time.sleep(2)
 
@@ -95,6 +100,8 @@ def calctemp(mVolts):
 
 
 lastServoSetting = 180
+defaultDevice = 12
+
 while True:
     mainloop(None)
 

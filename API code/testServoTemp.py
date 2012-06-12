@@ -76,7 +76,6 @@ def setpos(device,angle):
 	#Get the highest 7 bits
 	bytehigh=(scaledValue-(scaledValue&127))/128
 
-	#move to an absolute position in 8-bit mode (0x04 for the mode, 0 for the servo, 0-255 for the position (spread over two bytes))
 	# Works - Pololu protocol: 0xAA, device number, 0x04, channel number, target low bits, target high bits
 	# cmdString=chr(0xAA)+chr(device)+chr(0x04)+chr(0x00)+chr(bytelow)+chr(bytehigh)
 
